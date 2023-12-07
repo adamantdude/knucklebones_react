@@ -1,6 +1,7 @@
-import { Divider } from "@mui/material";
+import { Button, Divider } from "@mui/material";
 import GameGrid from "../GameGrid/GameGrid";
 import GameInfo from "../GameInfo/GameInfo";
+import GameAction from "../GameAction/GameAction";
 
 
 function Game() {
@@ -10,11 +11,13 @@ function Game() {
 
     return (
         <div>
-            <GameGrid /> {/*  Player 1 Grid  */}
+            <GameGrid player='0'/> {/*  Player 1 Grid  */}
+            <GameAction />
             <GameInfo /> {/*  Player 1 Info */}
             <Divider />
             <GameInfo /> {/*  Player 2 Info */}
-            <GameGrid /> {/*  Player 2 Grid  */}
+            <GameAction />
+            <GameGrid player='1'/> {/*  Player 2 Grid  */}
         </div>
     )
 }

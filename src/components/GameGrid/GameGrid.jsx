@@ -1,32 +1,17 @@
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
+import GameRow from "../GameRow/GameRow";
 
-function GameGrid() {
+function GameGrid({ player }) {
 
     const sendConsole = () => {
-        console.log('wassap');
+        console.log('wassap', player);
     }
 
     return (
-        <Box sx={{ display: 'flex', flexDirection:'column', alignItems:'center', mt:'3%', mb:'3%' }}>
-            <Box sx={{ display: 'flex' }}>
-                <Card variant="outlined" sx={{ height: '4em', width: '4em' }} onClick={sendConsole}>
-                    <CardContent sx={{textAlign:'center'}}>
-                        <Typography></Typography>
-                    </CardContent>
-                </Card>
-                <Card variant="outlined" sx={{ height: '4em', width: '4em' }}></Card>
-                <Card variant="outlined" sx={{ height: '4em', width: '4em' }}></Card>
-            </Box>
-            <Box sx={{ display: 'flex' }}>
-                <Card variant="outlined" sx={{ height: '4em', width: '4em' }}></Card>
-                <Card variant="outlined" sx={{ height: '4em', width: '4em' }}></Card>
-                <Card variant="outlined" sx={{ height: '4em', width: '4em' }}></Card>
-            </Box>
-            <Box sx={{ display: 'flex' }}>
-                <Card variant="outlined" sx={{ height: '4em', width: '4em' }}></Card>
-                <Card variant="outlined" sx={{ height: '4em', width: '4em' }}></Card>
-                <Card variant="outlined" sx={{ height: '4em', width: '4em' }}></Card>
-            </Box>
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: '1%', mb: '1%' }}>
+            <GameRow/>
+            <GameRow/>
+            <GameRow/>
         </Box>
     )
 }
