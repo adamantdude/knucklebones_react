@@ -7,8 +7,6 @@ import GameAction from "../GameAction/GameAction";
 function Game() {
 
 
-
-
     return (
         <div>
             <GameGrid player='0'/> {/*  Player 1 Grid  */}

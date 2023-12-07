@@ -1,14 +1,10 @@
 import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
 import GameRow from "../GameRow/GameRow";
 
-function GameGrid({ player }) {
-
-    const sendConsole = () => {
-        console.log('wassap', player);
-    }
+function GameGrid() {
 
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: '1%', mb: '1%' }}>
+        <Box sx={{ display: 'flex', flexDirection:'column', alignItems:'center', mt: '1%', mb: '1%' }}>
             <GameRow/>
             <GameRow/>
             <GameRow/>

@@ -4,7 +4,7 @@ function GameRow() {
 
 
     return (
-        <Box sx={{}}>
+        <Box sx={{ display:'flex' }}>
                 <Card variant="outlined" sx={{ height: '4em', width: '4em' }}>
                     <CardContent sx={{ textAlign: 'center' }}>
                         <Typography></Typography>
