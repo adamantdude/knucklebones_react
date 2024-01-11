@@ -1,6 +1,13 @@
 import { Box, Button, Card, CardContent, Typography } from "@mui/material";
+import { useDispatch } from "react-redux";
 
 function GameInfo({ player }) {
+
+    const dispatch = useDispatch();
+
+    const gameStart = () => {
+        dispatch({ type: 'START_GAME' });
+    }
 
     return (
             <Box sx={{ display:"flex", justifyContent:"center", mt:"5px", mb:"5px" }}>
@@ -18,7 +25,7 @@ function GameInfo({ player }) {
                 <Card variant="outlined" sx={{ height:"4em", width:"7em" }}>
                     <CardContent>
                         {!player ? 
-                        <Button variant="contained">Start</Button> 
+                        <Button variant="contained" onClick={gameStart}>Start</Button> 
                         :
                         <Button variant="contained">Reset</Button> 
                         }
