@@ -8,6 +8,7 @@ function GameRow({ row, player }) {
     const roll = useSelector(store => store.grid.random);
     // choose correct grid to display according to component prop 'player'
     const display = player ? useSelector(store => store.grid.p2Grid) : useSelector(store => store.grid.p1Grid);
+    const record = !player ? useSelector(store => store.grid.p2Grid) : useSelector(store => store.grid.p1Grid);
     const turn = useSelector(store => store.grid.turn);
     const diceArr = [ '', '⚀', '⚁', '⚂', '⚃', '⚄', '⚅' ];
 
@@ -20,8 +21,9 @@ function GameRow({ row, player }) {
             console.log("The column clicked is: ", column);
 
             const newDisplay = display.slice(); // remove pass by ref to reducer array while still using same data
+            const newRecord = record.slice();
 
-            dispatch({ type: 'SAVE_SCORE', payload: { player, roll, column, newDisplay } })
+            dispatch({ type: 'SAVE_SCORE', payload: { player, roll, column, newDisplay, newRecord }})
         }
         else {
             console.log('Player attempted move when not their turn!');
